@@ -1,0 +1,29 @@
+﻿<ion-view title="Padarias" data-tap-disabled="false">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="item item-input-inset calm-bg">
+            <label class="item-input-wrapper">
+                <input type="text" ng-model="Padaria.Nome" placeholder="Digite o nome da padaria">
+            </label>
+            <button class="button button-small button-dark" ng-click="listarPadariasPorNome()">
+                Buscar
+            </button>
+        </div>
+
+        <div class="card " ng-if="Padarias.length == 0">
+            <div class="item item-balanced item-text-wrap">
+                Preencha o nome da padaria que deseja e selecione o botão buscar
+            </div>
+        </div>
+        <div class="list">
+
+            <a class="item item-thumbnail-left" href="#/app/padaria/{{item.PadariaId}}" collection-repeat="item in Padarias">
+                <img src="data:image/png;base64,{{item.FotoPrincipal == '' ? FotoPadrao.Valor : item.FotoPrincipal}}">
+                <h2>{{item.NomeFantasia}}</h2>
+                <p>{{item.Descricao}}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

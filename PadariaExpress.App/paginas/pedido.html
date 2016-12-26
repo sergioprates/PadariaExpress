@@ -1,0 +1,29 @@
+﻿<ion-view title="Pedido" data-tap-disabled="false">
+    <!--<ion-nav-buttons side="left">
+    </ion-nav-buttons>-->
+    <ion-content class="has-header has-footer">
+        <div class="list">
+            <div>
+                <a class="item item-thumbnail-left item-button-right" href="#/app/produto/{{item.Produto.ProdutoId}}" ng-click="gerenciaExibicao($event)" collection-repeat="item in Pedido.Itens">
+                    <img src="data:image/png;base64, {{ item.Produto.Foto == '' ? FotoPadrao.Valor : item.Produto.Foto}}">
+
+                    <h2>{{item.Produto.Nome}}</h2>
+                    <p>Preço Un. - R$ {{item.Produto.Preco.toFixed(2)}}</p>
+                    <p>Total - R$ {{(item.Produto.Preco * item.Quantidade).toFixed(2)}}</p>
+                    <span class="badge badge-balanced">{{item.Quantidade}} Un.</span>
+                </a>
+            </div>
+            
+        </div>
+        
+    </ion-content>
+    <div class="bar bar-footer bar-positive item-input-inset">
+        <button class="button button-assertive" ng-click="cancelarPedido()" ng-if="pedidoCarregado == false">
+            Cancelar
+        </button>
+        <div class="title">Total + Frete: R$ {{ Pedido.ValorTotal.toFixed(2) }}</div>
+        <button class="button button-balanced pull-right" ng-click="finalizarPedido()" ng-if="pedidoCarregado == false">
+            Finalizar
+        </button>
+    </div>
+</ion-view>

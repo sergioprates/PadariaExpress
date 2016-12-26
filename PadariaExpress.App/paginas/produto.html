@@ -1,0 +1,41 @@
+﻿<ion-view title="Produto" data-tap-disabled="false">
+    <ion-nav-back-button class="button-clear">
+        <i class="ion-arrow-left-c"></i> Voltar
+    </ion-nav-back-button>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list card">
+            <div class="item item-body">
+                <div class="item text-center">
+                    <h1>{{Produto.Nome}}</h1>
+                </div>
+                <img class="full-image" src="data:image/png;base64, {{ Produto.Foto == '' ? FotoPadrao.Valor : Produto.Foto}}">
+                <h3>Preço</h3>
+                <p>
+                    {{Produto.Preco.toFixed(2)}}
+                </p>
+                
+                <h3>Descrição</h3>
+                <p>
+                    {{Produto.Descricao}}
+                </p>
+                
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="Item.Quantidade" type="number" placeholder="Preencha a quantidade">
+                </label>
+                <button class="button button-full button-positive" ng-click="adicionarProduto()">
+                    Adicionar ao pedido
+                </button>
+                <button class="button button-full button-assertive" ng-click="removerProduto()" ng-show="estaNoPedido() == true">
+                    Remover do pedido
+                </button>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PadariaExpress.Dominio.Factory.UsuarioFactory">
+    <Position X="44.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Factory\UsuarioFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.BandeiraCartao">
+    <Position X="35.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEQgAAAAABAAIAAAAAAAAEAAAA=</HashCode>
+      <FileName>Modelo\BandeiraCartao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Categoria">
+    <Position X="38" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAABAAAACAEQAAAAAAAAAIAAAAAAAAEAAEA=</HashCode>
+      <FileName>Modelo\Categoria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Produtos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Cliente">
+    <Position X="47.5" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="PadariaExpress.Dominio.Modelo.Usuario" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="42.625" Y="6.199" />
+        <Point X="42.625" Y="6.571" />
+        <Point X="48.312" Y="6.571" />
+        <Point X="48.312" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pedidos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.EnderecoEntrega">
+    <Position X="46" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEBAACIAAAAIAACAAAAAAAAAAAAAAAABAAg=</HashCode>
+      <FileName>Modelo\EnderecoEntrega.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.EnderecoUsuario">
+    <Position X="39.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAABAADIAAAEQAACAAAAAAIAAAAAEAAABAAg=</HashCode>
+      <FileName>Modelo\EnderecoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.FormaDePagamento">
+    <Position X="38.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAACAEQAAAAAEAAAIAAAAAAAAEAAAQ=</HashCode>
+      <FileName>Modelo\FormaDePagamento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BandeiraCartao" />
+      <Property Name="Tipo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Funcionario">
+    <Position X="44.75" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="PadariaExpress.Dominio.Modelo.Usuario" FixedToPoint="true">
+      <Path>
+        <Point X="42.625" Y="6.199" />
+        <Point X="42.625" Y="6.571" />
+        <Point X="46.625" Y="6.571" />
+        <Point X="46.625" Y="7.866" />
+        <Point X="46.25" Y="7.866" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Padarias" Type="PadariaExpress.Dominio.Modelo.Padaria" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="45.562" Y="8.483" />
+        <Point X="45.562" Y="8.75" />
+        <Point X="42" Y="8.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\Funcionario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Padarias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.ItemPedido">
+    <Position X="45.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAACAAAAAAAAAAIAAAAQAAAAAAk=</HashCode>
+      <FileName>Modelo\ItemPedido.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Padaria">
+    <Position X="40.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABAAAAAgORBACIAAAEYgACAEQCIEIAACABAAAAJAAg=</HashCode>
+      <FileName>Modelo\Padaria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pedidos" />
+      <Property Name="Categorias" />
+      <Property Name="PeriodosDeFuncionamento" />
+      <Property Name="FormasDePagamento" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Pedido">
+    <Position X="43.5" Y="11.5" Width="1.5" />
+    <AssociationLine Name="FormaDePagamento" Type="PadariaExpress.Dominio.Modelo.FormaDePagamento" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="44.25" Y="14.594" />
+        <Point X="44.25" Y="14.702" />
+        <Point X="35.278" Y="14.702" />
+        <Point X="35.278" Y="7.118" />
+        <Point X="39" Y="7.118" />
+        <Point X="39" Y="8.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BABAAAAEAAAAEMAACACAAAAIAAAAAAAQAAAAAADAEgA=</HashCode>
+      <FileName>Modelo\Pedido.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Endereco" />
+      <Property Name="Status" />
+      <Property Name="FormaDePagamento" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Itens" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.PeriodoFuncionamento">
+    <Position X="43.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAQAAAIAAAAAIAAECAAAAAgAAA=</HashCode>
+      <FileName>Modelo\PeriodoFuncionamento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Produto">
+    <Position X="36" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAgAAEQAAAAAAAAAIAAAAAEQAEIAQA=</HashCode>
+      <FileName>Modelo\Produto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Proprietario">
+    <Position X="43" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\Proprietario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Padarias" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Sexo">
+    <Position X="44.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEQAAAAAAAAAIAAAAAAAEEAAgA=</HashCode>
+      <FileName>Modelo\Sexo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Modelo.Usuario">
+    <Position X="41.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAkSAAAAAAiAEwAEAACKoAAIAAAAAAACGAAAA=</HashCode>
+      <FileName>Modelo\Usuario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoUsuario" />
+      <Property Name="Sexo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="EnderecosUsuario" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.BandeiraCartaoServico">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\BandeiraCartaoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.CategoriaServico">
+    <Position X="4" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAABAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Servico\CategoriaServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.EnderecoUsuarioServico">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Servico\EnderecoUsuarioServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.FormaDePagamentoServico">
+    <Position X="2.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>Servico\FormaDePagamentoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.FuncionarioServico">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\FuncionarioServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.ItemPedidoServico">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\ItemPedidoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.PadariaServico">
+    <Position X="14.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAgQAABAAAAAAAAAAAAAIAAAAAIAQ=</HashCode>
+      <FileName>Servico\PadariaServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.PedidoServico">
+    <Position X="16.75" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAgAAhAAAAAAAAAAAAAAAAAIAAAAAIAQ=</HashCode>
+      <FileName>Servico\PedidoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.PeriodoFuncionamentoServico">
+    <Position X="7.5" Y="6" Width="1.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\PeriodoFuncionamentoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.ProdutoServico">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAQAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Servico\ProdutoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.ProprietarioServico">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\ProprietarioServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.ServicoBase&lt;TEntity&gt;">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAABQAAQAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Servico\ServicoBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.SexoServico">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\SexoServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Dominio.Servico.UsuarioServico">
+    <Position X="11.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAAAAAAACAAAEgAAIAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Servico\UsuarioServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IBandeiraCartaoRepositorio">
+    <Position X="3.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IBandeiraCartaoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.ICategoriaRepositorio">
+    <Position X="2" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\ICategoriaRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IEnderecoUsuarioRepositorio">
+    <Position X="6.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IEnderecoUsuarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IFormaDePagamentoRepositorio">
+    <Position X="11" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IFormaDePagamentoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IFuncionarioRepositorio">
+    <Position X="12.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IFuncionarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IItemPedidoRepositorio">
+    <Position X="14.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IItemPedidoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IPadariaRepositorio">
+    <Position X="8.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAACAAAAAAAAQAAAABAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Interface\Repositorio\IPadariaRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IPedidoRepositorio">
+    <Position X="5.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IPedidoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IPeriodoFuncionamentoRepositorio">
+    <Position X="0.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IPeriodoFuncionamentoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IProdutoRepositorio">
+    <Position X="4.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IProdutoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IProprietarioRepositorio">
+    <Position X="8.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IProprietarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IRepositorioBase&lt;TEntity&gt;">
+    <Position X="7.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAABQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interface\Repositorio\IRepositorioBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.ISexoRepositorio">
+    <Position X="13.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\ISexoRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Repositorio.IUsuarioRepositorio">
+    <Position X="10.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Interface\Repositorio\IUsuarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IBandeiraCartaoServico">
+    <Position X="28.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IBandeiraCartaoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.ICategoriaServico">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interface\Servico\ICategoriaServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IEnderecoUsuarioServico">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IEnderecoUsuarioServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IFormaDePagamentoServico">
+    <Position X="22.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interface\Servico\IFormaDePagamentoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IFuncionarioServico">
+    <Position X="25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IFuncionarioServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IItemPedidoServico">
+    <Position X="29.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IItemPedidoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IPadariaServico">
+    <Position X="32.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAIAQ=</HashCode>
+      <FileName>Interface\Servico\IPadariaServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IPedidoServico">
+    <Position X="30.5" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interface\Servico\IPedidoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IPeriodoFuncionamentoServico">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IPeriodoFuncionamentoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IProdutoServico">
+    <Position X="21.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interface\Servico\IProdutoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IProprietarioServico">
+    <Position X="20.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\IProprietarioServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IServicoBase&lt;TEntity&gt;">
+    <Position X="24.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAABQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interface\Servico\IServicoBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.ISexoServico">
+    <Position X="27.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\Servico\ISexoServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Dominio.Interface.Servico.IUsuarioServico">
+    <Position X="32.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAAAAAAACAAAAgAAAAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interface\Servico\IUsuarioServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PadariaExpress.Dominio.Modelo.StatusPedido">
+    <Position X="40.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQQAAAAAAAQCAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\StatusPedido.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PadariaExpress.Dominio.Modelo.TipoFormaDePagamento">
+    <Position X="35.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\TipoFormaDePagamento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PadariaExpress.Dominio.Modelo.TipoUsuario">
+    <Position X="39.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAACAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo\TipoUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

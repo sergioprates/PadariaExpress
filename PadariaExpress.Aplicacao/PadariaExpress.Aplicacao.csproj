@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6AD03EDE-492C-4D5C-9A16-7236FD5B102A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PadariaExpress.Aplicacao</RootNamespace>
+    <AssemblyName>PadariaExpress.Aplicacao</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppServicoBase.cs" />
+    <Compile Include="BandeiraCartaoAppServico.cs" />
+    <Compile Include="CategoriaAppServico.cs" />
+    <Compile Include="ConviteFuncionarioAppServico.cs" />
+    <Compile Include="FormaDePagamentoAppServico.cs" />
+    <Compile Include="Interfaces\IAppServicoBase.cs" />
+    <Compile Include="Interfaces\IBandeiraCartaoAppServico.cs" />
+    <Compile Include="Interfaces\ICategoriaAppServico.cs" />
+    <Compile Include="Interfaces\IConviteFuncionarioAppServico.cs" />
+    <Compile Include="Interfaces\IFormaDePagamentoAppServico.cs" />
+    <Compile Include="Interfaces\IPadariaAppServico.cs" />
+    <Compile Include="Interfaces\IPedidoAppServico.cs" />
+    <Compile Include="Interfaces\IProdutoAppServico.cs" />
+    <Compile Include="Interfaces\ISexoAppServico.cs" />
+    <Compile Include="Interfaces\IUsuarioAppServico.cs" />
+    <Compile Include="PadariaAppServico.cs" />
+    <Compile Include="PedidoAppServico.cs" />
+    <Compile Include="ProdutoAppServico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SexoAppServico.cs" />
+    <Compile Include="UsuarioAppServico.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Componentes\Push.Dominio\PushNotification.Dominio.csproj">
+      <Project>{d4306204-f315-44be-96c9-cbf7a0109e42}</Project>
+      <Name>PushNotification.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PadariaExpress.Dominio\PadariaExpress.Dominio.csproj">
+      <Project>{1ea10a93-93ff-4d56-99ad-3578597d7daa}</Project>
+      <Name>PadariaExpress.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util.Email\Util.Email.csproj">
+      <Project>{8b1b8116-94bb-47aa-8b9c-d9405e3ba80f}</Project>
+      <Name>Util.Email</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.BandeiraCartaoRepositorio">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\BandeiraCartaoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.CategoriaRepositorio">
+    <Position X="10.25" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAABQABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\CategoriaRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.EnderecoUsuarioRepositorio">
+    <Position X="16.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\EnderecoUsuarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.FormaDePagamentoRepositorio">
+    <Position X="13.25" Y="8.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAABQABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\FormaDePagamentoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.FuncionarioRepositorio">
+    <Position X="10" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\FuncionarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.ItemPedidoRepositorio">
+    <Position X="8.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\ItemPedidoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.PadariaRepositorio">
+    <Position X="19.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAACAAAAAAAAQAABQBAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Repositorio\PadariaRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.PedidoRepositorio">
+    <Position X="15" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAABAAABQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\PedidoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.PeriodoFuncionamentoRepositorio">
+    <Position X="7" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\PeriodoFuncionamentoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.ProdutoRepositorio">
+    <Position X="11.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAABQABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\ProdutoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.ProprietarioRepositorio">
+    <Position X="16" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\ProprietarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.RelatorioFaturamentoRepositorio">
+    <Position X="29" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\RelatorioFaturamentoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.RepositorioBase&lt;TEntity&gt;">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAUAAABQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repositorio\RepositorioBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.SexoRepositorio">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\SexoRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Infra.Dados.Repositorio.UsuarioRepositorio">
+    <Position X="18.5" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAAAAAAAAAAAAAAAABQAAAAAAQAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Repositorio\UsuarioRepositorio.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

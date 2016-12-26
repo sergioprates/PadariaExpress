@@ -1,0 +1,2 @@
+Disalow: /
+Allow: Index.html

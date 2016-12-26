@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.padariaexpress.app"
+    version     = "1.0.0"
+    versionCode = "1" >
+
+  <!-- versionCode is optional and Android only -->
+
+  <name>Padaria Express</name>
+  <preference name="SplashScreenDelay" value="6000" />
+  <preference name="fullscreen" value="false" />
+  <preference name="phonegap-version" value="cli-5.2.0" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="android-targetSdkVersion" value="17" />
+  <preference name="android-minSdkVersion" value="7" />
+
+
+  <description>
+    Aplicativo que auxiliará as pessoas em suas compras nas padarias
+  </description>
+
+  <author href="http://www.padariaexpress.com" email="sergio.prates@padariaexpress.com">
+    Sergio Prates dos Santos
+  </author>
+
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
+  </feature>
+  <feature name="PushPlugin">
+    <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+  </feature>
+
+
+  <icon src="res/logo.png" />
+  <gap:splash src="res/screen/android/splash.png" />
+
+  <!--Plugins-->
+  <gap:plugin name="org.apache.cordova.device" version="0.2.12"/>
+  <gap:plugin name="cordova-plugin-splashscreen" version="2.1.0" source="npm" />
+  <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+  <gap:plugin name="nl.x-services.plugins.toast" version="2.0.2" />
+  <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+  <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+  <gap:plugin name="cordova-plugin-whitelist" source="npm" version="1.0.0" />
+  <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
+  
+  <!--<gap:plugin name="plugin.google.maps.menusito" version="1.2.5" >
+    <param name="API_KEY_FOR_ANDROID" value="AIzaSyCCC6OdxMjo7whmdfOwVqeWgBsXilYRHFc" />
+    <param name="API_KEY_FOR_IOS" value="AIzaSyCHiLR0q06ibgbxlTgxSPlyZihv4tyjVHM" />
+  </gap:plugin>-->
+
+ <allow-navigation href="*" />
+  <!--<gap:plugin name="com.ionic.keyboard" version="1.0.3" />-->
+</widget>

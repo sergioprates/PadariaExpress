@@ -1,0 +1,63 @@
+﻿<ion-view title="Padaria" data-tap-disabled="false">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+   
+    <ion-content class="has-header">
+        
+        <div class="list card">
+            <div class="item item-body">
+                <div class="item text-center">
+                    <h1>{{Padaria.NomeFantasia}}</h1>
+                </div>
+                <img class="full-image" src="data:image/png;base64,{{Padaria.FotoPrincipal.toString()}}">
+                <div class="card">
+                    <div class="item item-text-wrap">
+                       {{Padaria.Descricao}}
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        <h3>Períodos de funcionamento</h3>
+                        <div class="row">
+                            <div class="col"><strong>Dia da Semana</strong></div>
+                            <div class="col"><strong>Hora de Abertura</strong></div>
+                            <div class="col"><strong>Hora de Fechamento</strong></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col"></div>
+                        </div>
+                        <div class="row" ng-repeat="item in Padaria.PeriodosDeFuncionamento">
+                            <div class="col">{{buscarDiaDaSemana(item.DiaDaSemana)}}</div>
+                            <div class="col">{{item.HoraAbertura.substring(0, 5)}}</div>
+                            <div class="col">{{item.HoraFechamento.substring(0, 5)}}</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        <h3>Telefone para contato</h3>
+                        <strong>({{Padaria.Telefone.substring(0,2)}}) {{Padaria.Telefone.substring(2,6)}} - {{Padaria.Telefone.substring(6,10)}}</strong>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        <h3>Valor do frete</h3>
+                        <strong>R$ {{Padaria.ValorFrete.toFixed(2)}}</strong>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="item">
+                <a href="#/app/produtos/{{Padaria.PadariaId}}" class="button button-full button-positive">
+                    Visualizar Produtos
+                </a>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

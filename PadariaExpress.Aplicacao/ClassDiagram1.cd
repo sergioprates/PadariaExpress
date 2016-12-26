@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PadariaExpress.Aplicacao.AppServicoBase&lt;TEntity&gt;">
+    <Position X="8.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAABQAAQAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>AppServicoBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.BandeiraCartaoAppServico">
+    <Position X="8.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BandeiraCartaoAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.CategoriaAppServico">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>CategoriaAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.FormaDePagamentoAppServico">
+    <Position X="12" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>FormaDePagamentoAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.PadariaAppServico">
+    <Position X="16.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAAAAAAAIAQ=</HashCode>
+      <FileName>PadariaAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.PedidoAppServico">
+    <Position X="10.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAABAAAAAAAQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>PedidoAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.ProdutoAppServico">
+    <Position X="5.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ProdutoAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.SexoAppServico">
+    <Position X="9.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SexoAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PadariaExpress.Aplicacao.UsuarioAppServico">
+    <Position X="14.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACAAAAgAAAAAQAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>UsuarioAppServico.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IAppServicoBase&lt;TEntity&gt;">
+    <Position X="8.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAQAAABQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interfaces\IAppServicoBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IBandeiraCartaoAppServico">
+    <Position X="8.5" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IBandeiraCartaoAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.ICategoriaAppServico">
+    <Position X="4.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\ICategoriaAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IFormaDePagamentoAppServico">
+    <Position X="9.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IFormaDePagamentoAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IPadariaAppServico">
+    <Position X="14.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAIAQ=</HashCode>
+      <FileName>Interfaces\IPadariaAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IPedidoAppServico">
+    <Position X="11.75" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IPedidoAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IProdutoAppServico">
+    <Position X="5.75" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IProdutoAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.ISexoAppServico">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISexoAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PadariaExpress.Aplicacao.Interfaces.IUsuarioAppServico">
+    <Position X="12.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IUsuarioAppServico.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

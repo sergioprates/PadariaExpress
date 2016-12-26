@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Padaria Express</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        script src="//html5shim.googlecode.com/svn/trunk/html5.js">/script>
+    ![endif]-->
+    <link href="Content/styles.css" rel="stylesheet" />
+
+    <!-- script references -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <script src="Scripts/Util.js"></script>
+    <script src="Scripts_Telas/Dashboard.js"></script>
+</head>
+<body>
+    <!-- begin template -->
+    <div class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="Index.html">Padaria Express</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active proprietario"><a href="Principal.html">Home</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Dashboard.html');">Pedidos</a></li>
+                <li class="funcionario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'CadastroPadaria.html');">MeusDados</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'CadastroPadaria.html');">Minha Padaria</a></li>
+               
+                
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Funcionarios.html');">Funcionários</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'FormasDePagamento.html');">Formas de Pagamento</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Categorias.html');">Categorias</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Produtos.html');">Produtos</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'RelatorioFaturamento.html');">Relatório</a></li>
+                
+                <li>&nbsp;</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+                <li><a href="#" onclick="sair(event);">Sair</a></li>
+
+            </ul>
+            
+        </div>
+    </div>
+    <div id="map-canvas" style="height: 100%"></div>
+    <div class="container-fluid" id="main" ng-app="PadariaExpressApp">
+        <div class="row" ng-controller="DashboardController">
+            <div class="col-xs-8" id="left">
+
+                <h2>Pedidos</h2>
+                <!-- item list -->
+                <hr>
+                <p>
+                    <a href="#" class="center-block btn btn-primary" ng-click="carregarPedidos()">
+                        Carregar novos pedidos
+                    </a>
+                </p>
+
+                <hr>
+                <div class="panel" ng-class="pegarClasse(pedido.Status)" ng-repeat="pedido in Pedidos">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6 text-left" data-toggle="collapse" data-target="#conteudoPedido{{pedido.PedidoId}}" style="cursor:pointer">
+                                Pedido #{{pedido.PedidoId}} -
+                                Data {{ pedido.DataPedido.split('-')[2].substring(0,2) }}/{{ pedido.DataPedido.split('-')[1] }}/{{ pedido.DataPedido.split('-')[0] }}
+
+                                {{ pedido.DataPedido.split('T')[1].split(':')[0]}}:{{ pedido.DataPedido.split('T')[1].split(':')[1]}}
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label id="lblPendente{{pedido.PedidoId}}" class="btn btn-xs btn-muted" ng-class="{active: pedido.Status == 1}" class-element="btn-warning" pedido="{{pedido.PedidoId}}" ng-disabled="pedido.Status > 1" data-toggle="tooltip" data-placement="bottom" title="Significa que você ainda não aceitou e nem rejeitou o pedido.">
+                                        <input type="radio" name="options" id="rbPendente{{pedido.PedidoId}}" autocomplete="off" ng-checked="pedido.Status == 1"> P
+                                    </label>
+                                    <label id="lblAceito{{pedido.PedidoId}}" class="btn btn-xs btn-muted" ng-click="alterarStatus(pedido, 2)" ng-class="{active: pedido.Status == 2}" class-element="btn-primary" ng-disabled="pedido.Status > 2" pedido="{{pedido.PedidoId}}" data-toggle="tooltip" data-placement="bottom" title="Significa que você aceitou o pedido.">
+                                        <input type="radio" name="options" id="rbAceito{{pedido.PedidoId}}" autocomplete="off" ng-checked="pedido.Status == 2"> A
+                                    </label>
+                                    <label id="lblSaiuEntrega{{pedido.PedidoId}}" class="btn btn-xs btn-muted" ng-click="alterarStatus(pedido,3);" ng-class="{active: pedido.Status == 3}" ng-disabled="pedido.Status > 3" class-element="btn-info" pedido="{{pedido.PedidoId}}" data-toggle="tooltip" data-placement="bottom" title="Significa que o pedido saiu para entrega.">
+                                        <input type="radio" name="options" id="rbSaiuEntrega{{pedido.PedidoId}}" autocomplete="off" ng-checked="pedido.Status == 3"> S
+                                    </label>
+                                    <label id="lblEntregue{{pedido.PedidoId}}" class="btn btn-xs btn-muted" ng-click="alterarStatus(pedido,4); " ng-class="{active: pedido.Status == 4}" ng-disabled="pedido.Status > 4" class-element="btn-success" pedido="{{pedido.PedidoId}}" data-toggle="tooltip" data-placement="bottom" title="Significa que o pedido foi entregue.">
+                                        <input type="radio" name="options" id="rbEntregue{{pedido.PedidoId}}" autocomplete="off" ng-checked="pedido.Status == 4"> E
+                                    </label>
+                                    <label id="lblRejeitado{{pedido.PedidoId}}" class="btn btn-xs btn-muted" ng-click="alterarStatus(pedido,5); " ng-disabled="pedido.Status == 4" ng-class="{active: pedido.Status == 5}" class-element="btn-danger" pedido="{{pedido.PedidoId}}" data-toggle="tooltip" data-placement="bottom" title="Significa que você rejeitou o pedido.">
+                                        <input type="radio" name="options" id="rbRejeitado{{pedido.PedidoId}}" autocomplete="off" ng-checked="pedido.Status == 5"> R
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="conteudoPedido{{pedido.PedidoId}}" class="panel-body collapse">
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="item in pedido.Itens">
+                                <span class="badge">{{item.Quantidade}} UN</span>
+                                {{item.Produto.Nome}}
+                            </li>
+                        </ul>
+                        <table class="table">
+                            <tr>
+                                <td>Cliente</td>
+                                <td>{{pedido.Cliente.Nome}}</td>
+                            </tr>
+                            <tr>
+                                <td>Endereço</td>
+                                <td>
+                                    {{pedido.Cliente.EnderecosUsuario[0].Logradouro}},
+                                    Número: {{pedido.Cliente.EnderecosUsuario[0].Numero}},
+                                    Complemento: {{pedido.Cliente.EnderecosUsuario[0].Complemento}}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Endereço (cont.)</td>
+                                <td>
+                                    {{pedido.Cliente.EnderecosUsuario[0].Bairro}} -
+                                    {{pedido.Cliente.EnderecosUsuario[0].Cidade}} -
+                                    {{pedido.Cliente.EnderecosUsuario[0].Estado}} -
+                                    {{pedido.Cliente.EnderecosUsuario[0].CEP}}
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{pedido.Cliente.Email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Telefone</td>
+                                <td>{{pedido.Cliente.Telefone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Forma de Pagamento</td>
+                                <td>{{pedido.FormaDePagamento.Nome}}</td>
+                            </tr>
+                            <tr ng-show="pedido.FormaDePagamento.Tipo == 0">
+                                <td>Troco</td>
+                                <td>R$ {{pedido.Troco.toFixed(2)}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total do Pedido</td>
+                                <td>R$ {{pedido.ValorTotal.toFixed(2)}}</td>
+                            </tr>
+                            <tr>
+                                <td>Observações</td>
+                                <td>{{pedido.Observacao}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                
+            </div>
+            <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
+
+        </div>
+    </div>
+    <!-- end template -->
+    <div id="modalAguarde" class="modal fade bs-example-modal-sm" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+
+                    <h4 class="modal-title">Aguarde...</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="img/loading.gif" style="width: 55px" />
+                    </center>
+                </div>
+                <!--<div class="modal-footer">
+                </div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</body>
+</html>

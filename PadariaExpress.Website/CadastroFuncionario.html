@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Padaria Express</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-select.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]
+        script src="//html5shim.googlecode.com/svn/trunk/html5.js"/script
+    ![endif]-->
+
+    <link href="Content/styles.css" rel="stylesheet" />
+
+    <!-- script references -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap-datepicker.min.js"></script>
+    <script src="Scripts/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="Scripts/bootstrap-select.min.js"></script>
+    <script src="Scripts/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery.mask.min.js"></script>
+    <script src="Scripts/Util.js"></script>
+    <script src="Scripts_Telas/CadastroFuncionario.js"></script>
+</head>
+<body>
+    <!-- begin template -->
+    <div class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="Principal.html">Padaria Express</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active proprietario"><a href="Principal.html">Home</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Dashboard.html');">Pedidos</a></li>
+                <li class="funcionario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'CadastroPadaria.html');">MeusDados</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'CadastroPadaria.html');">Minha Padaria</a></li>
+
+
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Funcionarios.html');">Funcionários</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'FormasDePagamento.html');">Formas de Pagamento</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Categorias.html');">Categorias</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Produtos.html');">Produtos</a></li>
+                <li class="proprietario"><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'RelatorioFaturamento.html');">Relatório</a></li>
+
+                <li>&nbsp;</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+                <li><a href="#" onclick="sair(event);">Sair</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Cadastro de Funcionário</h2>
+                <br />
+                <form id="cadastroForm" class="form-horizontal" onsubmit="gravar(event)">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="Nome">Nome</label>
+                        <div class="col-sm-6">
+                            <input id="Nome" name="Nome" type="text" class="form-control">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="Email">Email</label>
+                        <div class="col-sm-6">
+                            <input id="Email" name="Email" type="email" class="form-control">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="DataNascimento">Data de Nascimento</label>
+                        <div class="col-sm-6">
+                            <input id="DataNascimento" name="DataNascimento" type="text" class="form-control datepicker data">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="Cpf">CPF</label>
+                        <div class="col-sm-6">
+                            <input id="Cpf" name="Cpf" type="text" class="form-control cpf">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group" style="display:none">
+                        <label class="col-sm-2 control-label " for="Senha">Senha</label>
+                        <div class="col-sm-6">
+                            <input id="Senha" name="Senha" type="password" class="form-control">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group" style="display:none">
+                        <label class="col-sm-2 control-label " for="ConfirmacaoSenha">Confirmação de Senha</label>
+                        <div class="col-sm-6">
+                            <input id="ConfirmacaoSenha" name="ConfirmacaoSenha" type="password" class="form-control">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="Sexo">Sexo</label>
+                        <div class="col-sm-6">
+                            <select id="Sexo" name="Sexo" class="selectpicker" data-width="100%"></select>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="submit" form="cadastroForm" class="btn btn-sm btn-success" value="Salvar">
+                <button type="button" class="btn btn-sm btn-default" onclick="window.history.back()">Voltar</button>
+            </div>
+            <div class="col-sm-8">
+            </div>
+        </div>
+    </footer>
+    <div id="modalAguarde" class="modal fade bs-example-modal-sm" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+
+                    <h4 class="modal-title">Aguarde...</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="img/loading.gif" style="width: 55px" />
+                    </center>
+                </div>
+                <!--<div class="modal-footer">
+                </div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="modalErro" class="modal fade bs-example-modal-sm" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+
+                    <h4 class="modal-title">Ops.. Ocorreu um erro</h4>
+                </div>
+                <div class="modal-body">
+                    <span id="lblMensagem"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">OK</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</body>
+</html>

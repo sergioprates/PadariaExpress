@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A4DAB60-1EA6-4D54-A58C-A53DC57361C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PadariaExpress.Infra.Dados</RootNamespace>
+    <AssemblyName>PadariaExpress.Infra.Dados</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Device" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexto\PadariaExpressContexto.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\BandeiraCartaoRepositorio.cs" />
+    <Compile Include="Repositorio\CategoriaRepositorio.cs" />
+    <Compile Include="Repositorio\ConviteFuncionarioRepositorio.cs" />
+    <Compile Include="Repositorio\EnderecoUsuarioRepositorio.cs" />
+    <Compile Include="Repositorio\FormaDePagamentoRepositorio.cs" />
+    <Compile Include="Repositorio\FuncionarioRepositorio.cs" />
+    <Compile Include="Repositorio\ItemPedidoRepositorio.cs" />
+    <Compile Include="Repositorio\PadariaRepositorio.cs" />
+    <Compile Include="Repositorio\PedidoRepositorio.cs" />
+    <Compile Include="Repositorio\PeriodoFuncionamentoRepositorio.cs" />
+    <Compile Include="Repositorio\ProdutoRepositorio.cs" />
+    <Compile Include="Repositorio\ProprietarioRepositorio.cs" />
+    <Compile Include="Repositorio\RelatorioFaturamentoRepositorio.cs" />
+    <Compile Include="Repositorio\RepositorioBase.cs" />
+    <Compile Include="Repositorio\SexoRepositorio.cs" />
+    <Compile Include="Repositorio\UsuarioRepositorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PadariaExpress.Dominio\PadariaExpress.Dominio.csproj">
+      <Project>{1ea10a93-93ff-4d56-99ad-3578597d7daa}</Project>
+      <Name>PadariaExpress.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PadariaExpress.Relatorio\PadariaExpress.Relatorio.csproj">
+      <Project>{1a0ee385-f586-4cfc-8420-50a63a1987ce}</Project>
+      <Name>PadariaExpress.Relatorio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

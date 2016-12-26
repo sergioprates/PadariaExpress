@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Padaria Express - Cadastro Usuário</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrapValidator.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]
+        script src="//html5shim.googlecode.com/svn/trunk/html5.js"/script
+    ![endif]-->
+
+
+    <link href="Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- begin template -->
+    <div class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="Principal.html">Padaria Express</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="Principal.html">Home</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Dashboard.html');">Pedidos</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'CadastroPadaria.html');">Minha Padaria</a></li>
+                <li><a href="#">Funcionários</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'FormasDePagamento.html');">Formas de Pagamento</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Categorias.html');">Categorias</a></li>
+                <li><a href="#" onclick="redirecionaNoContextoDaPadaria(event, 'Produtos.html');">Produtos</a></li>
+
+                <li>&nbsp;</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
+                <li><a href="#" onclick="sair(event);">Sair</a></li>
+
+            </ul>
+            <!--<form class="navbar-form">
+                <div class="form-group" style="display:inline;">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Category 1</a></li>
+                                <li><a href="#">Category 2</a></li>
+                                <li><a href="#">Category 3</a></li>
+                                <li><a href="#">Category 4</a></li>
+                                <li><a href="#">Category 5</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" placeholder="O que você procura?">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+                    </div>
+                </div>
+            </form>-->
+        </div>
+    </div>
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Cadastro de Usuário</h2>
+                <br />
+                <div id="divMensagem" class="alert alert-dismissible" role="alert" style="display:none">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Oops!</strong> 
+                    <span id="lblMensagem"></span>
+                </div>
+                <br />
+                <form id="frmPrincipal" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="txtNome">Nome</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="txtNome" class="form-control" id="txtNome" placeholder="Nome" />
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="txtLogin">Login</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="txtLogin" id="txtLogin" placeholder="Login">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="txtSenha">Senha</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" name="txtSenha" id="txtSenha">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="txtConfirmacaoSenha">Confirmação de Senha</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" name="txtConfirmacaoSenha" id="txtConfirmacaoSenha">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="txtEmail">E-mail</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="txtEmail" id="txtEmail" placeholder="E-mail">
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label " for="ddlSexo">Sexo</label>
+                        <div class="col-sm-6">
+                            <select id="ddlSexo" class="form-control">
+                                <option>Selecione...</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="chkAtivo"></label>
+                        <div class="col-sm-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="chkAtivo" type="checkbox" class="checkbox" value="" checked>
+                                    Habilitado
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4"></div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="submit" class="btn btn-sm btn-success" onclick="gravar()" value="Cadastrar" />
+                <button type="button" class="btn btn-sm btn-primary" onclick="window.history.back()">Voltar</button>
+            </div>
+            <div class="col-sm-8">
+            </div>
+        </div>
+    </footer>
+    <!--HIDDEN FIELDS-->
+    <input type="hidden" id="hidItemID" value="0" />
+    <!-- script references -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrapValidator.min.js"></script>
+    <script src="Scripts/Util.js"></script>
+    <script src="Scripts_Telas/CadastroUsuario.js"></script>
+</body>
+</html>

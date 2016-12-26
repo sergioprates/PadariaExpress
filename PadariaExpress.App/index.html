@@ -1,0 +1,88 @@
+﻿<html ng-app="padariaexpress">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Padaria Express</title>
+    <link href="frameworks/ionic/css/ionic.min.css" rel="stylesheet" />
+    <link href="frameworks/ionic/css/ionicons.min.css" rel="stylesheet" />
+    <style>
+        .angular-google-map-container { 
+          height: 100%; 
+        }
+        .ion-custom-size
+        {
+            font-size: 20px;
+        }
+
+.mapa {
+    height: 100%; 
+}
+
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}
+    </style>
+
+   
+    <script src="js/scripts/lodash.min.js"></script>   
+
+    <!--Plugins-->
+    <script src="frameworks/ionic/js/ionic.bundle.min.js"></script>
+
+    <script src="js/scripts/angular-simple-logger.js"></script>
+    <!--<script src=""></script>-->
+    <script src="js/scripts/cpf_cnpj.min.js"></script>
+    <script src="js/scripts/ngCpfCnpj.js"></script>
+    <!--<script src="js/scripts/angular-google-maps.min.js"></script>-->
+    <script src="js/scripts/ui-mask.min.js"></script>
+    <script src="js/plugins/ng-cordova.min.js"></script>
+    
+    <script src="cordova.js"></script>
+    <script src="js/plugins/pushNgCordova.js"></script>
+    <!--FimPlugins-->
+    <script src="js/scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/services/ionicServices.js"></script>
+    <script src="js/services/generalServices.js"></script>
+    <script src="js/services/padariaexpressServices.js"></script>
+    <!--Factorys-->
+    <script src="js/factorys/pushFactory.js"></script>
+    <script src="js/factorys/googleMapsFactory.js"></script>
+    <!--Fim Factorys-->
+    <!--Controllers-->
+    <script src="js/controllers/appController.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/pedidosController.js"></script>
+    <script src="js/controllers/padariasController.js"></script>
+    <script src="js/controllers/padariaController.js"></script>
+    <script src="js/controllers/produtosController.js"></script>
+    <script src="js/controllers/produtoController.js"></script>
+    <script src="js/controllers/pedidoController.js"></script>
+    <script src="js/controllers/perfilController.js"></script>
+    <script src="js/controllers/finalizarpedidoController.js"></script>
+    <!--FimControllers-->
+    <!--Diretivas-->
+    <script src="js/Directives/utilDirectives.js"></script>
+    <!--Fim Diretivas-->
+    <!--Routes-->
+    <script src="js/routes/padariaExpressRoutes.js" type="text/javascript"></script>
+    <!--FimRoutes-->
+</head>
+<body>
+    <ion-nav-view class="slide-left-right">
+       
+
+    </ion-nav-view>
+    <script id="home.html" type="text/ng-template">
+        
+        <ion-nav-view>
+           
+        </ion-nav-view>
+    </script>
+    
+</body>
+</html>

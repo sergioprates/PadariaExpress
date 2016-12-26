@@ -1,0 +1,114 @@
+﻿<ion-view title="Finalizar" data-tap-disabled="false">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+
+        <div class="list">
+            <form name="frmFinalizarPedido" novalidate="novalidate" ng-submit="finalizarPedido(frmFinalizarPedido)">
+                <label class="item item-input item-select" ng-class="{ 'has-errors' : frmFinalizarPedido.FormaDePagamento.$invalid && frmFinalizarPedido.$submitted, 'no-errors' : frmFinalizarPedido.FormaDePagamento.$valid  && frmFinalizarPedido.$submitted}">
+                    <div class="input-label">
+                        Forma de Pagamento
+                    </div>
+                    <select ng-model="Pedido.FormaDePagamento.FormaDePagamentoId" name="FormaDePagamento" ng-change="verificaSeDinheiro()" required>
+                        <option value="">Selecione...</option>
+                        <option ng-repeat="item in FormasDePagamento" value="{{item.FormaDePagamentoId}}">{{item.Nome}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="Dinheiro == true">
+                    <span class="input-label">Troco para</span>
+                    <input ng-model="Pedido.ValorPago" type="number" placeholder="Troco para...">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Observações</span>
+                    <textarea ng-model="Pedido.Observacao" placeholder="Observações"></textarea>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="MeuEndereco" checked ng-model="Pedido.EnderecoMarcado">
+                    <div class="item-content">
+                        Entregar no meu endereço
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="OutroEndereco" ng-model="Pedido.EnderecoMarcado">
+                    <div class="item-content">
+                        Entregar em outro endereço
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <div ng-show="Pedido.EnderecoMarcado == 'OutroEndereco'">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">CEP</span>
+                        <input ng-model="Pedido.Endereco.CEP" ng-blur="buscarCep()" type="text" placeholder="" ui-mask="99999-999">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Endereço</span>
+                        <input ng-model="Pedido.Endereco.Logradouro" type="text" placeholder="Endereço">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Número</span>
+                        <input ng-model="Pedido.Endereco.Numero" type="text" placeholder="Número">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Complemento</span>
+                        <input ng-model="Pedido.Endereco.Complemento" type="text" placeholder="Complemento">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Cidade</span>
+                        <input ng-model="Pedido.Endereco.Cidade" type="text" placeholder="Cidade">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Bairro</span>
+                        <input ng-model="Pedido.Endereco.Bairro" type="text" placeholder="Bairro">
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Estado
+                        </div>
+                        <select ng-model="Pedido.Endereco.Estado">
+                            <option value="">Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="PR">Paraná</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </label>
+
+                </div>
+                <button type="submit" class="button button-full button-positive">
+                    Finalizar
+                </button>
+                <button class="button button-full button-assertive" ng-click="cancelarPedido()">
+                    Cancelar
+                </button>
+            </form>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer bar-positive item-input-inset">
+        <div class="title">Total + Frete: R$ {{ Pedido.ValorTotal.toFixed(2) }}</div>
+    </div>
+</ion-view>
